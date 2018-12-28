@@ -95,17 +95,57 @@
 
 <h2>1. <em>Введение</em></h2><b>
 
-I'm not sure why you're reading this book. It's taken me a while to discover why I'm writing it. Let's examine the title: <em>Programming a Problem-Oriented-Language</em>. The key word is programming. I've written many programs over the years. I've tried to write <em>good</em> programs, and I've observed the manner in which I write them rather critically. My goal has been to decrease the effort required and increase the quality produced.
+Я не уверен, почему вы читаете эту книгу. Мне понадобилось время, чтобы понять, 
+почему я это пишу. Давайте рассмотрим заголовок:
+<em>Программирование проблемно-ориентированного языка</em>. 
+Ключевое слово -- программирование. Я написал много программ за эти годы. 
+Я пытался писать <em>хорошие</em> программы, и я наблюдал за тем, как я пишу их,
+довольно критически. Моя цель состояла в том, чтобы уменьшить требуемое усилие 
+и улучшить качество результата.
 
-<p>In the course of these observations, I've found myself making the same mistakes repeatedly. Mistakes that are obvious in retrospect, but difficult to recognise in context. I thought that if I wrote a prescription for programming, I could at least remind myself of problems. And if the result is of value to me, it should be of value to others; if what I say is new to you, you may learn something of value; if I cover familiar ground, you at least get a new point of view.
+<p>
+В ходе этих наблюдений я неоднократно видел что совершаю одни и те же ошибки. 
+Ошибки, которые очевидны в ретроспективе, но которые трудно распознать в контексте. 
+Я думал, что если бы я написал рецепт для программирования, я мог бы хотя бы 
+напомнить себе о проблемах. И если результат имеет ценность для меня, он должен 
+быть ценным и для других; если то, что я говорю, ново для вас, вы можете узнать 
+что-то ценное; если я вспахиваю знакомую почву, вы, по крайней мере, 
+получите новую точку зрения.
 
-<p>I've also been distressed at the lack of concern from others about problems I consider significant. It amounts to a general indifference to quality; a casual attitude of confidence that one's programs are pretty good, in any case as good as necessary. I'm convinced this confidence is misplaced. Moreover this attitude is reinforced by the massive trend to high-level languages and a placid acceptance of their inefficiencies: What's the use of designing a really good algorithm if the compiler's going to botch it up anyway?
+<p>
+Я также был огорчен отсутствием беспокойства других по поводу проблем, 
+которые я считаю значительными. Это равносильно общему безразличию к качеству; 
+необоснованная уверенность в том, что программы у вас довольно хорошие, 
+по крайней настолько хорошие, насколько это необходимо. Я убежден, 
+что эта уверенность неуместна. Более того, это отношение подкрепляется 
+общим стремлением к языкам высокого уровня, и спокойным признанием их 
+неэффективности: какая польза от разработки действительно хорошего алгоритма, 
+если компилятор все равно его испортит?
 
-<p>So I've written a book about programming. I have no great taste for debating over a one-way communication link and no real interest in convincing you that I'm right in what I say. So you'll probably find that I'm being brusk. I'm quite likely to state bluntly something you may take issue with. Please do! My intention is to document an approach I've found useful, and perhaps to stimulate critical interest in programming. If you care enough to take issue, I'm delighted.
+<p>
+Итак, я написал книгу о программировании. У меня нет особого вкуса к дебатам 
+по односторонней линии связи, и я не заинтересован в том, чтобы убедить вас, 
+что я прав в том, что говорю. Так что вы, вероятно, обнаружите, что я был бревном. 
+Я вполне могу прямо заявить, что вы можете не согласны с этим. Пожалуйста, 
+сделайте это! Я намереваюсь задокументировать подход, который я нашел полезным, 
+и, возможно, стимулировать критический интерес к программированию. 
+Если вы достаточно внимательны, я в восторге.
 
-<p>Back to the title. What about Problem-Oriented-Language? I didn't start out to write about that; and I'm not sure that I'm qualified to do so. But I discovered that in order to justify what I was doing and identify the appropriate circumstances for doing it, the term became essential.
+<p>
+Вернемся к названию. Что насчет Проблемно-Ориентированного Языка? 
+Я все еще не начал писать об этом; и я не уверен, что у меня есть на это право. 
+Но я обнаружил, что для того, чтобы оправдать то, что я делал, 
+и определить соответствующие обстоятельства для этого, термин стал необходимым.
 
-<p>A problem-oriented-language is a language tailored to a particular application. To avoid that uniquely clumsy term, I'll usually substitute <em>application language</em> as synonymous. Very often such a language isn't recognised for what it is. For instance, if your program reads a code in column 80 to identify an input card, you are implementing an application language. A very crude one, a very awkward one; mostly because you hadn't given the matter any thought. Recognising the problem, I'm sure you can design a better solution. This book will show you how.
+<p>
+Проблемно-ориентированный язык -- это язык, адаптированный к конкретному приложению. 
+Чтобы избежать этого неуклюжего термина, я заменю его на синоним: прикладной язык. 
+Очень часто такой язык не признается таковым, какой он есть на самом деле. 
+Например, даже если ваша программа всего лишь считывает код в столбце 80 
+для идентификации перфокарты, вы реализуете прикладной язык. 
+Очень грубый, очень неловкий; главным образом потому, что вы не думали об этом. 
+Признавая проблему, я уверен, что вы можете разработать лучшее решение. 
+Эта книга покажет вам, как.
 
 <h2>1.1 <em>Основной Принцип</em></h2>
 

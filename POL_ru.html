@@ -149,38 +149,117 @@
 
 <h2>1.1 <em>Основной Принцип</em></h2>
 
-We have a large number of subjects to talk about. I'm going to throw before you a lot of techniques that you may be able to use. This is basically the result of the nature of a digital computer: a general purpose tool for processing information.
+У нас есть большое количество тем для обсуждения. Я собираюсь выложить перед вами 
+много техник, которые вы сможете использовать. Это в основном результат природы 
+цифрового компьютера: это универсальный инструмент для обработки информации.
 
-<p>A computer can do anything. I hope that your realize that, providing you allow me to define "anything", I can prove this. I mean real, incontrovertible, mathematical-type proof. A computer cannot do everything. I can prove this, too. But most important, with only you and I to program it, a computer can not even do very much. This is of the nature of an empirical discovery.
+<p>
+Компьютер может делать все что угодно. Я надеюсь, что вы понимаете, что, 
+если вы позволите мне определить это «что угодно», я смогу доказать это. 
+Я имею в виду реальное, неопровержимое доказательство математического типа. 
+Компьютер не может сделать все. Я тоже могу это доказать. Но самое главное, 
+что только вы и я можем запрограммировать его, компьютер не может даже сделать 
+очень много. Это имеет характер эмпирического открытия.
 
-<p>So to offer guidance when the trade-offs become obscure, I am going to define the Basic Principle:<ul>
-   <li>Keep it Simple</ul>
+<p>
+Поэтому, чтобы предложить путеводную нить, когда компромиссы становятся неясными, 
+я собираюсь определить Основной Принцип:
+   <li>KISS: Делайте это Проще</ul>
 
-<p>As the number of capabilities you add to a program increases, the complexity of the program increases exponentially. The problem of maintaining compatibility among these capabililties, to say nothing of some sort of internal consistency in the program, can easily get out of hand. You can avoid this if you apply the Basic Principle. You may be acquainted with an operating system that ignored the Basic Principle.
+<p>
+KISS (акроним для «Keep it simple, stupid») — принцип проектирования, 
+принятый в ВМС США в 1960х гг.
+Принцип KISS утверждает, что большинство систем работают лучше всего, если они 
+остаются простыми, а не усложняются. Поэтому в области проектирования простота 
+должна быть одной из ключевых целей, и следует избегать ненужной сложности.
 
-<p>It is very hard to apply. All the pressures, internal and external, conspire to add features to your program. After all, it only takes a half-dozen instructions; so why not? The only opposing pressure is the Basic Principle, and if you ignore it, there is no opposing pressure.
+<p>
+По мере увеличения количества возможностей, которые вы добавляете в программу, 
+сложность программы увеличивается в геометрической прогрессии. 
+Проблема поддержания совместимости между этими возможностями, не говоря уже 
+о некоторой внутренней согласованности в программе, может легко выйти из-под 
+контроля. Вы можете избежать этого, если будете применять Основной принцип. 
+Возможно, вы знакомы с операционной системой, которая игнорирует
+Основной принцип.
 
-<p>In order to help you apply the Basic Principle, I'm going to tell you how many instructions you should use in some routines. And how large a program with certain capabilities should be. These numbers are largely machine independent; basically they measure the complexity of the task. They are based upon routines I have used in my programs, so I can substantiate them. Let me warn you now that I'll be talking about programs that will fit comfortably in 4K words of core.
+<p>
+Этот метод очень трудно применять. Всё давление, внутреннее и внешнее, 
+принуждает к добавлению функционала в вашу программу. В конце концов, 
+это займет всего полдюжины инструкций; так почему нет? Единственное 
+противоположное давление -- это Основной Принцип, и если вы игнорируете его, 
+это компенсирующее давления исчезает.
 
-<p>The Basic Principle has a corollary:<ul>
-   <li>Do Not Speculate!</ul>
-Do not put code in your program that <em>might</em> be used. Do not leave hooks on which you can hang extensions. The things you might want to do are infinite; that means that each one has 0 probability of realization. If you need an extension later, you can code it later - and probably do a better job than if you did it now. And if someone else adds the extension, will they notice the hooks you left? Will you document that aspect of your program?
+<p>
+Чтобы помочь вам применять Основной Принцип, я расскажу вам, сколько инструкций 
+вы должны использовать в некоторых подпрограммах. И насколько большой  должна 
+быть программа с определенными возможностями. Эти числа в значительной степени 
+независимы от машины; в основном они измеряют сложность задачи.  Они основаны 
+на процедурах, которые я использовал в своих программах, поэтому я могу их 
+обосновать. Позвольте мне вас сейчас предупредить, что я буду говорить о 
+программах, которые будут удобно вписываться в 4K слов (команд) ядра.
 
-<p>The Basic Principle has another corollary:<ul>
-   <li>Do It Yourself!</ul>
-Now we get down the the nitty-gritty. This is our first clash with the establishment. The conventionsl approach, enforced to a greater or lesser extent, is that you shall use a standard subroutine. I say that you should write your own subroutines.
+<p>Основной Принцип имеет следствие:<ul>
+   <li>Не спекулируйте!</ul>
 
-<p>Before you can write your own subroutine, you have to know how. This means, to be practical, that you have written it before; which makes it difficult to get started. But give it a try. After writing the same subroutine a dozen times on as many computers and languages, you'll be pretty good at it. If you don't plan to be programming that long, you won't be interested in this book.
+Не помещайте в вашу программу код, <em>который может быть понадобится</em> в будущем. 
+Не оставляйте крючки, на которые вы можете повесить расширения. Вещи, которые 
+вы можете захотеть сделать, бесконечны; это означает, что у каждой конкретной 
+вещи есть нулевая вероятность реализации. Если вам нужно расширение позже, вы 
+должны написать его позже -- и, вероятно, лучше справиться с работой, 
+чем если бы вы делали это сейчас. А если кто-то еще будет добавлять расширение, 
+заметит ли он оставленные вами хуки для его реализации? 
+Будете ли вы документировать этот аспект вашей программы?
 
-<p>What sort of subroutines do you write for yourself? I have acquired respect for SQRT subroutines. They're tricky things; seem to attract a lot of talent. You can use the library routine to good advantage. Input subroutines now. They seem to have crawled out from under a rock. I somehow can't agree that the last word was said 15 years ago when FORMAT statements were invented.
+<p>Основной Принцип также имеет еще одно следствие:<ul>
+   <li>Сделай это сам!</ul>
 
-<p>As I will detail later, the input routine is the most important code in your program. After all, no one sees your program; but everyone sees your input. To abdicate to a system subroutine that hasn't the slightest interest in your particular problem is foolish. The same can be said for output subroutine and disk-access subroutine.
+Теперь мы опускаемся до мелочей. Это наше первое столкновение с канонами и
+истеблишментом. Традиционный подход, применяемый в большей или меньшей степени, 
+заключается в том, что вы должны использовать библиотеки стандартных подпрограмм. 
+Я говорю, что вы должны написать свои собственные подпрограммы.
 
-<p>Moreovere, the task is not that great as to deter you. Although it takes hundreds of instructions to write a general purpose subroutine, you can do what you need with tens of instructions. In fact, I would advise against writing a subroutine longer that a hundred instructions.
+<p>
+Прежде чем вы сможете написать свою собственную подпрограмму, вы должны знать, 
+как это сделать. На практике это означает, что вы уже писали это раньше; 
+что затрудняет начало. Но попробуйте. После того, как вы напишете одну и ту же 
+подпрограмму несколько раз на разных компьютерах и языках, вы будете в этом хороши. 
+Если вы не планируете заниматься программированием так долго, 
+эта книга вас не заинтересует.
 
-<p>So if you want to read double-precision, complex integers; don't rely on the COBOL input subroutine, or wait till the manufacturer revises it. It's a lot easier to write your own.
+<p>
+Какие подпрограммы вы пишете для себя? Я стал уважать набор подпрограмм SQRT 
+по вычислению квадратных корней. Это сложная вещь; которая кажется, требует 
+много таланта. Вы можете использовать библиотечную процедуру для получения 
+преимущества. Откройте эти подпрограммы сейчас. Кажется, они выползли из-под 
+камня. Я почему-то не могу согласиться с тем, что последнее слово было сказано 
+55 лет назад, когда были придуманы FORMAT-выражения (прим. переводчика: 
+непереводимая игра слов с использованием местных идеоматических выражений,
+понятная только программистам на Фортране в 1970 г).
 
-<p>But suppose everyone wrote their own subroutines? Isn't that a step backward; away from the millenium when our programs are machine independent, when we all write in the same language, maybe even on the same computer? Let me take a stand: I can't solve the problems of the world. With luck, I can write a good program.
+<p>
+Как я опишу позже, процедура ввода - это самое важное место в вашей программе. 
+В конце концов, никто не видит ваш код; но все видят вашу реализацию ввода. 
+Глупо отказываться от системной подпрограммы, которая не имеет ни малейшего 
+интереса к вашей конкретной проблеме. То же самое можно сказать 
+и о подпрограмме вывода, и подпрограммам доступа к диску.
+
+<p>
+Более того, задача не настолько велика, чтобы сдерживать вас. 
+Хотя для написания подпрограмм общего назначения требуются сотни инструкций, 
+вы можете делать то, что вам нужно, с помощью десятков инструкций. 
+На самом деле, я бы посоветовал не писать подпрограммы длиннее, чем сто инструкций.
+
+<p>
+Так что если вы хотите читать числа с двойной точностью; или комплексные числа, 
+не полагайтесь на подпрограмму ввода стандартной библиотеки, и не ждите, 
+пока производитель исправит ее. Намного проще написать свою собственную.
+
+<p>
+Но предположим, что каждый пишет свои собственные подпрограммы? 
+Разве это не шаг назад; от эпохи, когда наши программы независимы от машин, 
+когда мы все пишем на одном языке, может быть, даже на одном типе компьютера? 
+Позвольте мне занять позицию: я не могу решить проблемы мира. 
+Если повезет, я могу написать хорошую программу.
 
 <h2>1.2 <em>Обзор</em></h2>
 

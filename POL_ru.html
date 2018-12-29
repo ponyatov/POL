@@ -263,25 +263,87 @@ KISS (акроним для «Keep it simple, stupid») — принцип пр�
 
 <h2>1.2 <em>Обзор</em></h2>
 
-I'm going to tell you how to write a program. It is a specific program; that is, a program with a specific structure and capabilities. In particular, it is a program that can be expanded from simple to complex along a well defined path, to handle a wide range of problems, likewise varying from simple to complex. One of the problems it considers is exactly the problem of complexity. How can you control your program so that it doesn't grow more complicated than your application warrants?
+Я собираюсь рассказать вам, как написать программу. Это конкретная программа; 
+это программа с определенной структурой и возможностями. В частности, 
+эта программа может быть расширена от простого к сложному по четко 
+определенному пути для решения широкого круга задач, также варьирующихся 
+от простого к сложному. Одной из проблем, которые мы рассматрим, является 
+именно проблема сложности. Как вы можете контролировать свою программу, 
+чтобы она не стала сложнее, чем требует ваше приложение?
 
-<p>First I'll define "input", and mention some general rules of programming that apply to all programs, whether they have input or not. Actually we will be almost exclusively concerned with input, so I've not much to say about programs lacking input.
+<p>
+Сначала я определю понятие «ввод» и упомяну некоторые общие правила 
+программирования, которые применяются ко всем программам, независимо от того, 
+имеют они ввод или нет. На самом деле мы будем почти исключительно связаны 
+с вводом данных, поэтому я не так много могу сказать о программах, 
+в которых он отсутствует.
 
-<p>By admitting input, a program acquires a control language by which a user can guide the program through a maze of possibilities. Naturally, this increases the flexibility of the program, it also requires a more complex application to justify it. However it is possible to achieve a considerable simplification of the program, by recognising that it needs a control language as a tool of implementation.
+<p>
+Допуская ввод, программа приобретает язык управления, с помощью которого 
+пользователь может вести программу через лабиринт возможностей. Естественно, 
+это увеличивает гибкость программы, а также требует более сложного применения 
+для обоснования ее написания. Однако можно добиться значительного упрощения 
+программы, признав, что ей нужен командный язык управления как инструмент реализации.
 
-<p>The next step is a problem-oriented-language. By permitting the program to dynamically modify its control language, we mark a qualitative change in capability. We also change our attention from the program to the language it implements. This is an important, and dangerous, diversion. For it's easy to lose sight of the problem amidst the beauty of the solution.
+<p>
+Следующим шагом является проблемно-ориентированный язык. Разрешая программе 
+динамически изменять свой язык управления, мы отмечаем качественное изменение 
+ее возможностей. Мы также переключаем наше внимание с программы на язык, 
+который она реализует. Это важная и опасная диверсия, поскольку легко 
+потерять из виду проблему любуясь красотой решения.
 
-<p>In a sense, our program has evolved into a meta-language, which describes a language we apply to the application. But having mentioned meta-language, I want to explain why I won't use the term again. You see things get pretty complicated, particularly on a philosophic level. To precisely describe our situation requires not 2 levels of language - language and meta-language - but a least 4 levels. To distinguish between these levels requires subtle arguments that promote not clarity but confusion. Moreover, the various levels can often be interchanged in practice, which reduces the philosophic arguments to hair-splitting.
+<p>
+В некотором смысле наша программа превратилась в метаязык, который описывает 
+язык, который мы применяем к приложению. Но упомянув метаязык, я хочу объяснить, 
+почему я больше не буду использовать этот термин. Вы видите, что все становится 
+довольно сложно, особенно на философском уровне. Для точного описания нашей 
+ситуации требуются не 2 уровня языка -- язык и метаязык -- но минимум 4 уровня. 
+Чтобы различать эти уровни, каждый раз нужно использовать тонкие параметры, 
+что способствуюет не ясности, а путанице. Кроме того, различные уровни часто 
+могут быть взаимозаменяемы на практике, что сводит философские споры к 
+выдиранию волос.
 
-<p>A problem-oriented-language can express any problem I've encountered. And remember, we're not concerned with the language, but with the program that makes the language work. By modifying the language we can apply the same program to many applications. However there are a class of extensions to the language that constitute another qualitative change. They don't increase the capacity of the program, but the increase the capability of the language. That is, they make the language more expressive. We will consider some such extensions in Chapter 8. I gathered them together chiefly because they share the common property that I don't quite comprehend their potential. For example, I think the language applies the concepts of English.
+<p>
+Проблемно-ориентированный язык может выразить любую проблему, с которой я 
+сталкивался. И помните, нас интересует не язык, а программа, которую этот язык 
+заставляет работать в нужном направлении. Изменяя язык, мы можем применять 
+одну и ту же программу ко многим приложениям. Однако существует класс 
+расширений языка, которые представляют собой еще одно качественное изменение. 
+Они не увеличивают возможности программы, но увеличивают возможности языка. 
+То есть они делают язык более выразительным. Мы рассмотрим некоторые такие 
+расширения в главе 8. Я собрал их вместе главным образом потому, что они 
+имеют общее свойство, и я не совсем понимаю их потенциал. Например, я думаю, 
+что такой язык применяет концепции натурального (английского) языка.
 
-<p>Finally, I want to describe a process whereby you can implement this program in machine language. That is, a bootstrap technique whereby a basic program can modify and expand itself.
+<p>
+Наконец, я хочу описать процесс, посредством которого вы можете реализовать 
+эту программу на машинном языке. Это метод раскрутки, с помощью которого 
+базовая программа может изменять и расширять сама себя.
 
-<p>I hope you find the ideas I describe of value to you. In particular, I hope that you will agree that the program I describe has a certain inevitability; that it must do certain things, it must do them in a certain order, and that a certain set of conventions yield an optimal solution.
+<p>
+Надеюсь, что вы найдете значимыми идеи, которые я описываю для вас. 
+В частности, я надеюсь, что вы согласитесь с тем, что описанная мною 
+программа следует определенной неизбежности; что она должен делать 
+определенные вещи, она должна их делать их в определенном порядке, 
+и что определенный набор соглашений дает оптимальное решение.
 
-<p>I've gone to some lengths to simplify. I hope that you don't find too many violations of the Basic Principle, for it's much easier to elaborate upon a program than it is to strip it to basics. You should feel free to build upon my basic routines, provided that you recognise that you are adding a convenience. If you confuse what is expedient with what is necessary, I guarantee your program will never stop growing.
+<p>
+Я сделал все, чтобы максимально упростить. Я надеюсь, что вы не найдете слишком 
+много нарушений Основного Принципа, потому что гораздо проще разработать 
+программу, чем разобрать ее до основ. Вы должны чувствовать себя удобно, 
+опираясь на мои основные процедуры, если вы понимаете, что добавляете удобство. 
+Если вы путаете то, что целесообразно, с тем, что необходимо, я гарантирую, 
+что ваша программа никогда не перестанет расти.
 
-<p>You will notice a lack of flow-charts. I've never liked them, for they seem to include a useless amount of information - either too little or too much. Besides they imply a greater rigidity in program structure than usually exists. I will be quite specific about what I think you should do and how you should do it. But I will use words, and not diagrams. I doubt that you would give a diagram the attention it deserved, anyway. Or that I would in preparing it.
+<p>
+Вы заметите отсутствие блок-схем. Я никогда не любил их, потому что они, 
+кажется, содержат бесполезное количество информации -- либо слишком мало, 
+либо слишком много. Кроме того, они подразумевают большую жесткость в 
+структуре программы, чем обычно существует. Я буду весьма конкретен в том, 
+что я думаю, что вы должны сделать и как вы должны это сделать. Но я буду 
+использовать слова, а не диаграммы. Я сомневаюсь, что вы все равно уделите 
+диаграмме то внимание, которого она заслуживает, 
+или то что я уделил при подготовке.
 
 <h2>2. <em>Программы без ввода</em></h2>
 
